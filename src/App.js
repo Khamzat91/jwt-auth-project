@@ -1,19 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import './index.scss';
 
 function App() {
-  const email = '';
-  const password = '';   
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  const onSubmit = (e) => {
+if()
+  }
   return (
-    <div className="App">
-    <form>
+    <div className="app">
+    <form onSubmit={onSubmit}>
       <label>
-        <input name="email" type="text"/>
+        <input value={email} name="email" type="text"/>
       </label>
       <label>
-        <input name="password" type="text"/>
+        <input value={password} name="password" type="text"/>
       </label>
-      <button>Отправить</button>
+      <button onClick={onSubmit}>Отправить</button>
     </form>
     </div>
   );
