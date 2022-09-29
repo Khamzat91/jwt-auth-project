@@ -5,19 +5,38 @@ function App() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const onSubmit = (e) => {
-if()
+const handleChangeEmail = (e) =>{
+  setEmail(e.target.value)
+}
+
+const handleChangePassword = (e) =>{
+  setPassword(e.target.value)
+}
+  const handleSubmit = (e) => {
+     e.preventDefault()
+     if(email && password){
+      console.log(email, password);
+      setEmail('')
+      setPassword('')
+     }else{
+      if(!email){
+        alert("неправильно ввели Email")
+      }else{
+        alert("неправильный Пороль")
+      }
+     }
+
   }
   return (
     <div className="app">
-    <form onSubmit={onSubmit}>
+    <form onSubmit={handleSubmit}>
       <label>
-        <input value={email} name="email" type="text"/>
+        <input onChange={handleChangeEmail} value={email} name="email" type="text"/>
       </label>
       <label>
-        <input value={password} name="password" type="text"/>
+        <input onChange={handleChangePassword} value={password} name="password" type="text"/>
       </label>
-      <button onClick={onSubmit}>Отправить</button>
+      <button type="submit" onClick={handleSubmit}>Отправить</button>
     </form>
     </div>
   );
