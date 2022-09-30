@@ -31,10 +31,10 @@ const handleChangePassword = (e) =>{
     <div className="app">
     <form onSubmit={handleSubmit}>
       <label>
-        <input onChange={handleChangeEmail} value={email} name="email" type="text"/>
+        <input onChange={handleChangeEmail} value={email} name="email" type="text" placeholder="email"/>
       </label>
       <label>
-        <input onChange={handleChangePassword} value={password} name="password" type="text"/>
+        <input onChange={handleChangePassword} value={password} name="password" type="text" placeholder="пороль"/>
       </label>
       <button type="submit" onClick={handleSubmit}>Отправить</button>
     </form>
